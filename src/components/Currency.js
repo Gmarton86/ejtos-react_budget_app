@@ -15,31 +15,28 @@ const Currency = () => {
             payload: selectedCurrency.symbol
         })
       };
+   
 
     return (
-        <div>
-            <div className='row'>
+        <div className='row'>
 
-            <div className="input-group mb-3" style={{ marginLeft: '2rem' }}>
-                    <div className="input-group-prepend">
-                        <label className="input-group-text" htmlFor="inputGroupSelect01">Currency({currency.symbol} {currency.name})</label>
-                    </div>
-                    <select
-                        className="custom-select"
-                        id="inputGroupSelect01"
-                        onChange={handleCurrencyChange}
-                        value={JSON.stringify(currency)} // Set the value to the stringified JSON
-                    >
-                        <option value={JSON.stringify({ name: 'Pound', symbol: '£' })}>£ Pound</option>
-                        <option value={JSON.stringify({ name: 'Dollar', symbol: '$' })}>$ Dollar</option>
-                        <option value={JSON.stringify({ name: 'Euro', symbol: '€' })}>€ Euro</option>
-                        <option value={JSON.stringify({ name: 'Ruppee', symbol: '₹' })}>₹ Ruppee</option>
-                    </select>
-
-                </div>
-            </div>
-
+        <div className="mb-3">
+        <label htmlFor="inputGroupSelect01" className="form-label">Currency</label>
+        <select
+            className="form-select bg-success"
+            id="inputGroupSelect01"
+            onChange={handleCurrencyChange}
+            value={JSON.stringify(currency)}
+        >
+            <option value={JSON.stringify({ name: 'Pound', symbol: '£' })}>£ Pound</option>
+            <option value={JSON.stringify({ name: 'Dollar', symbol: '$' })}>$ Dollar</option>
+            <option value={JSON.stringify({ name: 'Euro', symbol: '€' })}>€ Euro</option>
+            <option value={JSON.stringify({ name: 'Ruppee', symbol: '₹' })}>₹ Ruppee</option>
+        </select>
         </div>
+
+
+    </div>
     );
 };
 
